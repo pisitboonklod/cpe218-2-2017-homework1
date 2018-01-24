@@ -1,18 +1,14 @@
-
-import sun.java2d.pipe.PixelDrawPipe;
-
-import java.security.cert.Extension;
 import java.util.Stack;
-import java.util.concurrent.atomic.DoubleAccumulator;
 
 public class Homework1 {
+
 	public static  Node tree ;
 	public static Stack<Character> Box =new Stack<Character>();
 	public static void main(String[] args) {
 
-		//String input = "251-*32*+";
+		String posfix = "251-*32*+";
 
-		String posfix = args[0];
+//		String posfix = args[0];
 		for(int i=0;i<posfix.length();i++){
 			Box.add(posfix.charAt(i));
 		}
@@ -20,6 +16,7 @@ public class Homework1 {
 		Infix(tree);
 		iNorder(tree);
 		System.out.print("="+Calculate(tree));
+		Tree_Demo.main(args);
 
 	}
 	public static void Infix(Node Pisit){
@@ -30,24 +27,25 @@ public class Homework1 {
 			Infix(Pisit.left);
 		}
 	}
-	public static int Calculate(Node Dota){
-		if(Dota.Mind == '+')
+	public static int Calculate(Node d){
+
+		if(d.Mind == '+')
 		{
-			return Calculate(Dota.left)+Calculate(Dota.right);
+			return Calculate(d.left)+Calculate(d.right);
 		}
-		else  if(Dota.Mind == '-')
+		else  if(d.Mind == '-')
 		{
-			return Calculate(Dota.left)-Calculate(Dota.right);
+			return Calculate(d.left)-Calculate(d.right);
 		}
-		else  if(Dota.Mind == '*')
+		else  if(d.Mind == '*')
 		{
-			return Calculate(Dota.left)*Calculate(Dota.right);
+			return Calculate(d.left)*Calculate(d.right);
 		}
-		else  if(Dota.Mind == '/')
+		else  if(d.Mind == '/')
 		{
-			return  Calculate(Dota.left)/Calculate(Dota.right);
+			return  Calculate(d.left)/Calculate(d.right);
 		}
-		else return Integer.parseInt(Dota.Mind.toString());
+		else return Integer.parseInt(d.Mind.toString());
 	}
 
 	public static void iNorder(Node Hong) {
@@ -62,6 +60,8 @@ public class Homework1 {
 			System.out.print(Hong.Mind);
 		}
 	}
+
+
 
 /// test commit again
 }

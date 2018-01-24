@@ -7,5 +7,7 @@ public class Node {
     {
         Mind =inPut;
     }
-
+    public String toString() {
+        return Mind.toString();
+    }
 }
