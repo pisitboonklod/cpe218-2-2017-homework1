@@ -6,9 +6,9 @@ public class Homework1 {
 	public static Stack<Character> Box =new Stack<Character>();
 	public static void main(String[] args) {
 
-		String posfix = "251-*32*+";
+//		String posfix = "251-*32*+";
 
-//		String posfix = args[0];
+		String posfix = args[0];
 		for(int i=0;i<posfix.length();i++){
 			Box.add(posfix.charAt(i));
 		}
