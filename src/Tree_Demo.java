@@ -86,6 +86,9 @@ public class Tree_Demo extends JPanel
         if (node == null) return;
 
         Object nodeInfo = node.getUserObject();
+        Node mind = (Node) nodeInfo;
+        Homework1.iNorder(mind);
+        htmlPane.setText(mind.Mind.toString());
 //        if (node.isLeaf()) {
 //            BookInfo book = (Node)nodeInfo;
 //            displayURL(book.bookURL);
